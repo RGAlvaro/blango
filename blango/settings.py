@@ -46,6 +46,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'blog',
+    'crispy_forms',
+    'crispy_bootstrap5',
 ]
 
 MIDDLEWARE = [
@@ -89,6 +91,9 @@ DATABASES = {
     }
 }
 
+CRISPY_TEMPLATE_PACK = "bootstrap5"
+CRISPY_ALLOWED_TEMPLATE_PACKS = ('bootstrap', 'uni_form','bootstrap5', 'bootstrap3', 'bootstrap4', 'materialize_css_forms', )
+#CRISPY_TEMPLATE_PACK = 'materialize_css_forms'
 
 # Password validation
 # https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators
