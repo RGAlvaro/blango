@@ -80,7 +80,11 @@ class Dev(Configuration):
     }
 
     # Application definition
+    
+    EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
 
+    ACCOUNT_ACTIVATION_DAYS = 7
+    
     INSTALLED_APPS = [
         'django.contrib.admin',
         'django.contrib.auth',
