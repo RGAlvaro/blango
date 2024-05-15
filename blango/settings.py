@@ -102,6 +102,7 @@ class Dev(Configuration):
         "allauth.account",
         "allauth.socialaccount",
         "allauth.socialaccount.providers.google",
+        "rest_framework",
     ]
 
     MIDDLEWARE = [
