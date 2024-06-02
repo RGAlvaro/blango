@@ -9,6 +9,11 @@ class TagField(serializers.SlugRelatedField):
         except (TypeError, ValueError):
             self.fail(f"Tag value {data} is invalid")
 
+class UserSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = User
+        fields = ["first_name", "last_name", "email"]
+
 class CommentSerializer(serializers.ModelSerializer):
     id = serializers.IntegerField(required=False)
     creator = UserSerializer(read_only=True)
@@ -32,10 +37,6 @@ class PostSerializer(serializers.ModelSerializer):
         fields = "__all__"
         readonly = ["modified_at", "created_at"]
 
-class UserSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = User
-        fields = ["first_name", "last_name", "email"]
 
 class PostDetailSerializer(PostSerializer):
     comments = CommentSerializer(many=True)
